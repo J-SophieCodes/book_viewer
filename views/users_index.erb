@@ -1,0 +1,18 @@
+<% if @name.nil? %>
+<% else %>
+  <div>
+    <h2 class="content-subhead"><%= @name.capitalize  %></h2>
+    <p><strong>Name: </strong><%= @name.capitalize %></p>
+    <p><strong>Email: </strong><%= @profiles[@name][:email] %></p>
+    <p><strong>Interests: </strong><%= @profiles[@name][:interests].join(", ") %></p>
+  </div>
+<% end %>
+
+<div>
+  <h2 class="content-subhead"><%= @title %></h2>
+  <% @profiles.keys.each do |name| %>
+    <% next if name == @name %>
+    <p><a href="/users?name=<%= name %>"><%= name.capitalize %></a></p>
+  <% end %>
+</div>
+

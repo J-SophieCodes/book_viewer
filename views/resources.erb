@@ -1,0 +1,6 @@
+<a href="/resources">Sort Ascending</a>
+<a href="/resources?sort=descending">Sort Descending</a>
+
+<% @files.each do |file| %>
+  <p><a href=<%= file %>><%= File.basename(file) %></a></p>
+<% end %>
