@@ -1,5 +1,5 @@
 require "sinatra"
-require "sinatra/reloader"  # causes app to reload files with every page load
+require "sinatra/reloader" if development?
 require "tilt/erubis"
 require "yaml"
 
